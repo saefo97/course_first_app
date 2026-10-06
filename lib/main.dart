@@ -245,23 +245,36 @@ class HomeScreen extends StatelessWidget {
               GridView(
                 shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 300,
+                  maxCrossAxisExtent: 100,
                   childAspectRatio: 1,
                   mainAxisSpacing: 1,
                   crossAxisSpacing: 1,
                 ),
                 children: [
-                  Image.asset("assets/images/1.jpg"),
-                  Image.asset("assets/images/2.jpg"),
-                  Image.asset("assets/images/3.jpg"),
-                  Image.asset("assets/images/4.jpg"),
-                  Image.asset("assets/images/5.jpg"),
-                  Image.asset("assets/images/6.jpg"),
-                  Image.asset("assets/images/7.jpg"),
-                  Image.asset("assets/images/8.jpg"),
-                  Image.asset("assets/images/9.jpg"),
-                  Image.asset("assets/images/10.jpg"),
+                  for (int i = 1; i <= 10; i++)
+                    Image.asset("assets/images/$i.jpg", fit: BoxFit.cover),
                 ],
+              ),
+              RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Don't have a Rockstar Games account? ",
+                      style: TextStyle(fontWeight: FontWeight.bold,
+                      color: Colors.black
+                      ),
+                    ),
+                    TextSpan(
+                      text: "Create a new account right now",
+                      style: TextStyle(
+                        color: Colors.orange,
+                        decoration: TextDecoration.underline,
+                        decorationColor: Colors.orange,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
