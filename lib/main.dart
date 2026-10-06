@@ -69,6 +69,13 @@ class HomeScreen extends StatelessWidget {
                   end: AlignmentGeometry.bottomCenter,
                 ),
                 boxShadow: [
+
+
+
+
+
+
+
                   BoxShadow(
                     color: Colors.blue,
                     blurRadius: 5,
