@@ -261,8 +261,9 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     TextSpan(
                       text: "Don't have a Rockstar Games account? ",
-                      style: TextStyle(fontWeight: FontWeight.bold,
-                      color: Colors.black
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
                       ),
                     ),
                     TextSpan(
