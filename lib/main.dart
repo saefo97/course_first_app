@@ -26,6 +26,26 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             spacing: 8,
             children: [
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: TextFormField(
+                  //  textAlign: TextAlign.center,
+                  decoration: InputDecoration(
+                    fillColor: Colors.grey.shade300,
+                    filled: true,
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: BorderSide.none,
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: BorderSide.none,
+                    ),
+                    hintText: "Search",
+                    prefixIcon: Icon(Icons.search, color: Colors.grey.shade700),
+                  ),
+                ),
+              ),
               Row(
                 mainAxisAlignment: .spaceBetween,
                 crossAxisAlignment: .end,
@@ -181,6 +201,7 @@ class HomeScreen extends StatelessWidget {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
+                  spacing: 8,
                   children: [
                     CircleAvatar(
                       backgroundImage: AssetImage("assets/images/1.jpg"),
@@ -219,6 +240,28 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+
+              GridView(
+                shrinkWrap: true,
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: 300,
+                  childAspectRatio: 1,
+                  mainAxisSpacing: 1,
+                  crossAxisSpacing: 1,
+                ),
+                children: [
+                  Image.asset("assets/images/1.jpg"),
+                  Image.asset("assets/images/2.jpg"),
+                  Image.asset("assets/images/3.jpg"),
+                  Image.asset("assets/images/4.jpg"),
+                  Image.asset("assets/images/5.jpg"),
+                  Image.asset("assets/images/6.jpg"),
+                  Image.asset("assets/images/7.jpg"),
+                  Image.asset("assets/images/8.jpg"),
+                  Image.asset("assets/images/9.jpg"),
+                  Image.asset("assets/images/10.jpg"),
+                ],
               ),
             ],
           ),
