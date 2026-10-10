@@ -1,4 +1,5 @@
 import 'package:course_first_app/stless_stfull.dart';
+import 'package:course_first_app/xylophone.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,7 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: HomeScreen());
+    return MaterialApp(home: HomeScreen(),
+    debugShowCheckedModeBanner: false,
+    );
   }
 }
 
@@ -92,74 +95,79 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  color: Colors.grey.shade200,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        CircleAvatar(
-                          radius: 54,
-                          backgroundColor: Colors.green,
-                          child: CircleAvatar(
-                            radius: 52,
-                            backgroundColor: Colors.grey.shade200,
+                GestureDetector(
+                  onTap: (){
+Navigator.push(context, MaterialPageRoute(builder: (context)=>Xylophone()))   ;               },
+                  child: Container(
+                    color: Colors.grey.shade200,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 54,
+                            backgroundColor: Colors.green,
                             child: CircleAvatar(
-                              backgroundImage: AssetImage(
-                                "assets/images/1.jpg",
+                              radius: 52,
+                              backgroundColor: Colors.grey.shade200,
+                              child: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                  "assets/images/1.jpg",
+                                ),
+                                radius: 50,
                               ),
-                              radius: 50,
                             ),
                           ),
-                        ),
-                        SizedBox(width: 10),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          spacing: 8,
-                          children: [
-                            Text(
-                              "D7d07",
-                              style: TextStyle(
-                                fontSize: 28,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              "GGGGGGGGGG",
-                              style: TextStyle(
-                                fontSize: 26,
-                                color: Colors.grey.shade700,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Spacer(),
-                        Column(
-                          spacing: 8,
-                          children: [
-                            Text("12:33"),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.push_pin_rounded,
-                                  color: Colors.grey,
+                          SizedBox(width: 10),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            spacing: 8,
+                            children: [
+                              Text(
+                                "D7d07",
+                                style: TextStyle(
+                                  fontSize: 28,
+                                  fontFamily: "guides",
+                                  fontWeight: FontWeight.bold,
                                 ),
-                                Container(
-                                  padding: EdgeInsets.all(8),
-                                  child: Text(
-                                    "3",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.green,
-                                  ),
+                              ),
+                              Text(
+                                "GGGGGGGGGG",
+                                style: TextStyle(
+                                  fontSize: 26,
+                                  color: Colors.grey.shade700,
                                 ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
+                              ),
+                            ],
+                          ),
+                          Spacer(),
+                          Column(
+                            spacing: 8,
+                            children: [
+                              Text("12:33"),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.push_pin_rounded,
+                                    color: Colors.grey,
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.all(8),
+                                    child: Text(
+                                      "3",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.green,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
