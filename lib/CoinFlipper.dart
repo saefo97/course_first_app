@@ -15,7 +15,7 @@ class Coinflipper extends StatelessWidget {
             CircleAvatar(
               radius: 90,
 
-              backgroundImage: AssetImage("assets/images/coin2.jpg",
+              backgroundImage: AssetImage("assets/images/coin1.png",
               ),
             ),
             MaterialButton(onPressed: (){
