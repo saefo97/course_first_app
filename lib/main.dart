@@ -1,3 +1,4 @@
+import 'package:course_first_app/CoinFlipper.dart';
 import 'package:course_first_app/stless_stfull.dart';
 import 'package:course_first_app/xylophone.dart';
 import 'package:flutter/material.dart';
@@ -11,9 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: HomeScreen(),
-    debugShowCheckedModeBanner: false,
-    );
+    return MaterialApp(home: HomeScreen(), debugShowCheckedModeBanner: false);
   }
 }
 
@@ -56,25 +55,40 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    IconButton(icon: Icon(Icons.message), onPressed: () {
-
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => StlessStfull(),));
-                    }),
+                    IconButton(
+                      icon: Icon(Icons.message),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => StlessStfull(),
+                          ),
+                        );
+                      },
+                    ),
                   ],
                 ),
                 Align(
                   alignment: AlignmentGeometry.centerRight,
-                  child: Container(
-                    padding: EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(16),
-                        bottomRight: Radius.circular(16),
-                        bottomLeft: Radius.circular(16),
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Coinflipper()),
+                      );
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(16),
+                          bottomRight: Radius.circular(16),
+                          bottomLeft: Radius.circular(16),
+                        ),
+                        color: Colors.purple,
                       ),
-                      color: Colors.purple,
+                      child: Text("Go to Coin", style: TextStyle(color: Colors.white)),
                     ),
-                    child: Text("Hello", style: TextStyle(color: Colors.white)),
                   ),
                 ),
                 Align(
@@ -96,8 +110,12 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 GestureDetector(
-                  onTap: (){
-Navigator.push(context, MaterialPageRoute(builder: (context)=>Xylophone()))   ;               },
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Xylophone()),
+                    );
+                  },
                   child: Container(
                     color: Colors.grey.shade200,
                     child: Padding(
@@ -132,7 +150,7 @@ Navigator.push(context, MaterialPageRoute(builder: (context)=>Xylophone()))   ; 
                                 ),
                               ),
                               Text(
-                                "GGGGGGGGGG",
+                                "Go to Xylophone",
                                 style: TextStyle(
                                   fontSize: 26,
                                   color: Colors.grey.shade700,
