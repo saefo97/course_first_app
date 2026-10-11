@@ -1,6 +1,7 @@
-import 'package:course_first_app/CoinFlipper.dart';
+import 'package:course_first_app/coin_page.dart';
 import 'package:course_first_app/stless_stfull.dart';
 import 'package:course_first_app/xylophone.dart';
+import 'package:course_first_app/dice_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -74,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                     onTap: (){
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Coinflipper()),
+                        MaterialPageRoute(builder: (context) => CoinPage()),
                       );
                     },
                     child: Container(
@@ -93,19 +94,27 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Align(
                   alignment: AlignmentGeometry.centerLeft,
-                  child: Container(
-                    padding: EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(16),
-                        bottomRight: Radius.circular(16),
-                        bottomLeft: Radius.circular(16),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const DicePage()),
+                      );
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(16),
+                          bottomRight: Radius.circular(16),
+                          bottomLeft: Radius.circular(16),
+                        ),
+                        color: Colors.purple.shade50,
                       ),
-                      color: Colors.purple.shade50,
-                    ),
-                    child: Text(
-                      "Hello",
-                      style: TextStyle(color: Colors.purple),
+                      child: Text(
+                        "Go to Dice",
+                        style: TextStyle(color: Colors.purple),
+                      ),
                     ),
                   ),
                 ),

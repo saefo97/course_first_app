@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Coinflipper extends StatelessWidget {
-  const Coinflipper({super.key});
+class CoinPage extends StatelessWidget {
+  const CoinPage({super.key});
 
   @override
   Widget build(BuildContext context) {
