@@ -2,6 +2,7 @@ import 'package:course_first_app/coin_page.dart';
 import 'package:course_first_app/stless_stfull.dart';
 import 'package:course_first_app/xylophone.dart';
 import 'package:course_first_app/dice_page.dart';
+import 'package:course_first_app/magic_ball_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -114,6 +115,32 @@ class HomeScreen extends StatelessWidget {
                       child: Text(
                         "Go to Dice",
                         style: TextStyle(color: Colors.purple),
+                      ),
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentGeometry.centerRight,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const MagicBallPage()),
+                      );
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(16),
+                          bottomRight: Radius.circular(16),
+                          bottomLeft: Radius.circular(16),
+                        ),
+                        color: Colors.blue.shade100,
+                      ),
+                      child: Text(
+                        "Go to Magic Ball",
+                        style: TextStyle(color: Colors.blue.shade900, fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
